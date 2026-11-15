@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Haziq Ijaz | Machine Learning Engineer</title>
+<meta name="description" content="Muhammad Haziq Ijaz is a machine learning engineer working on GPU inference benchmarks, evaluation harnesses and applied LLM systems.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muhammad Haziq Ijaz | Machine Learning Engineer">
+<meta property="og:description" content="Muhammad Haziq Ijaz is a machine learning engineer working on GPU inference benchmarks, evaluation harnesses and applied LLM systems.">
+<meta name="theme-color" content="#0E2526">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E2526'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' text-anchor='middle' fill='%23EDB458'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap">
+<style>
+:root { color-scheme: light; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<style>
+/* Layout: one 1080px measure with a shared 210px left rail, so dates, project names and skill labels
+   sit on a single vertical axis down the page. Serif headlines, sans body, mono for data.
+   Two-pane hero (statement + token-grid illustration), one petrol band for current work, one for contact. */
+:root {
+  --bg: #F3F5F2;
+  --surface: #FBFCFA;
+  --ink: #0E2526;
+  --muted: #546869;
+  --line: #D5DDD8;
+  --accent: #0A6B60;
+  --signal: #96540A;
+  --signal-fill: #D9952B;
+  --hatch: #B3C1BC;
+  --cell-prompt: #86A09C;
+  --band-bg: #0E2526;
+  --band-fg: #E8F0EC;
+  --band-muted: #9FB4B0;
+  --band-line: #274547;
+  --band-accent: #62D2BC;
+  --band-signal: #EDB458;
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --rail: 210px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1A1C;
+    --surface: #102527;
+    --ink: #E6EEEA;
+    --muted: #93A8A5;
+    --line: #213C3E;
+    --accent: #62D2BC;
+    --signal: #EDB458;
+    --signal-fill: #E0A034;
+    --hatch: #36585A;
+    --cell-prompt: #5B7A78;
+    --band-bg: #11292B;
+    --band-fg: #E8F0EC;
+    --band-muted: #9FB4B0;
+    --band-line: #2A4B4D;
+    --band-accent: #62D2BC;
+    --band-signal: #EDB458;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1A1C;
+  --surface: #102527;
+  --ink: #E6EEEA;
+  --muted: #93A8A5;
+  --line: #213C3E;
+  --accent: #62D2BC;
+  --signal: #EDB458;
+  --signal-fill: #E0A034;
+  --hatch: #36585A;
+  --cell-prompt: #5B7A78;
+  --band-bg: #11292B;
+  --band-fg: #E8F0EC;
+  --band-muted: #9FB4B0;
+  --band-line: #2A4B4D;
+  --band-accent: #62D2BC;
+  --band-signal: #EDB458;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+section[id] { scroll-margin-top: 76px; }
+
+.wrap {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-left: max(22px, env(safe-area-inset-left, 0px));
+  padding-right: max(22px, env(safe-area-inset-right, 0px));
+}
+.sec { padding-block: 96px; }
+.sec + .sec { border-top: 1px solid var(--line); }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.7188rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sec-head { display: grid; gap: 12px; margin-bottom: 52px; max-width: 44rem; }
+.sec-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.sec-head h2 i, .band-head h2 i, .contact h2 i { font-style: italic; }
+.sec-head p { color: var(--muted); }
+
+/* ---------- top bar ---------- */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.top.scrolled { border-bottom-color: var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 28px; padding-block: 16px; }
+.mark { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; min-width: 0; }
+.mark b {
+  font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: 1rem; line-height: 1;
+  width: 34px; height: 34px; border: 1px solid var(--ink); border-radius: 50%;
+  display: inline-grid; place-items: center; flex: none; padding-top: 2px;
+}
+.mark span { font-family: var(--font-display); font-size: 1.125rem; font-weight: 500; letter-spacing: -0.005em; white-space: nowrap; }
+.top nav ul { display: flex; align-items: center; gap: 4px 26px; }
+.top nav a { font-size: 0.875rem; color: var(--muted); text-decoration: none; padding-block: 6px; border-bottom: 1px solid transparent; }
+.top nav a:hover, .top nav a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.top nav a.cta { color: var(--ink); border: 1px solid var(--ink); border-radius: 3px; padding: 7px 14px; font-weight: 500; }
+.top nav a.cta:hover { background: var(--ink); color: var(--bg); }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 72px 100px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; }
+.hero-copy { display: grid; gap: 26px; min-width: 0; }
+.status { display: inline-flex; align-items: center; gap: 10px; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.5vw, 4.35rem);
+  line-height: 1.03;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .lede { font-size: 1.125rem; color: var(--muted); max-width: 33rem; }
+.hero .lede strong { color: var(--ink); font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500;
+  padding: 12px 20px; border-radius: 3px; border: 1px solid var(--ink);
+  text-decoration: none; cursor: pointer; line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn-solid { background: var(--ink); color: var(--bg); }
+.btn-solid:hover { background: var(--accent); border-color: var(--accent); }
+.btn-line { background: transparent; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--bg); }
+.textlink { font-size: 0.9375rem; font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.textlink:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.textlink::after { content: " \2192"; }
+
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-top: 28px; margin-top: 6px; border-top: 1px solid var(--line); }
+.facts div { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.facts dd { font-size: 0.9375rem; line-height: 1.45; }
+
+/* token grid illustration */
+.batch { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 22px; display: grid; gap: 16px; min-width: 0; }
+.batch-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.batch-head .step { font-family: var(--font-mono); font-size: 0.7188rem; color: var(--signal); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.grid { display: grid; grid-template-columns: repeat(26, minmax(0, 1fr)); gap: 2px; }
+.grid span { aspect-ratio: 1; border-radius: 1.5px; }
+.c-pad { background: repeating-linear-gradient(135deg, var(--hatch) 0 1.5px, transparent 1.5px 4px); }
+.c-prompt { background: var(--cell-prompt); }
+.c-gen { background: var(--signal-fill); }
+.c-now { background: var(--ink); }
+.c-todo { box-shadow: inset 0 0 0 1px var(--line); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--font-mono); font-size: 0.7188rem; color: var(--muted); letter-spacing: 0.02em; }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 10px; height: 10px; border-radius: 1.5px; display: inline-block; }
+.batch figcaption { font-size: 0.875rem; color: var(--muted); line-height: 1.55; padding-top: 14px; border-top: 1px solid var(--line); }
+.batch figcaption b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise.d1 { animation-delay: 0.06s; }
+.rise.d2 { animation-delay: 0.12s; }
+.rise.d3 { animation-delay: 0.18s; }
+.rise.d4 { animation-delay: 0.24s; }
+
+/* ---------- current work band ---------- */
+.band { background: var(--band-bg); color: var(--band-fg); padding-block: 100px; }
+.band .label { color: var(--band-muted); }
+.band-head { display: grid; gap: 16px; max-width: 47rem; margin-bottom: 48px; }
+.band-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.9vw, 3rem);
+  line-height: 1.07; font-weight: 400; letter-spacing: -0.018em; text-wrap: balance;
+}
+.band-head h2 i { color: var(--band-signal); }
+.band-head p { color: var(--band-muted); font-size: 1.0625rem; max-width: 41rem; }
+.spec { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--band-line); }
+.spec div { padding: 22px 22px 22px 0; display: grid; gap: 6px; min-width: 0; align-content: start; }
+.spec div + div { padding-left: 22px; border-left: 1px solid var(--band-line); }
+.spec dd { font-family: var(--font-display); font-size: 1.3125rem; color: var(--band-fg); line-height: 1.25; font-variant-numeric: lining-nums; }
+.spec dd small { display: block; font-family: var(--font-mono); font-size: 0.7188rem; color: var(--band-muted); margin-top: 5px; letter-spacing: 0.02em; }
+.parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px 72px; margin-top: 56px; }
+.part { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.part h3 { font-family: var(--font-display); font-size: 1.4375rem; font-weight: 500; letter-spacing: -0.008em; line-height: 1.2; }
+.part ul { display: grid; gap: 11px; }
+.part li { position: relative; padding-left: 20px; color: var(--band-muted); font-size: 0.9688rem; line-height: 1.55; }
+.part li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 5px; height: 5px; background: var(--band-signal); border-radius: 50%; }
+.part li b { color: var(--band-fg); font-weight: 500; }
+.domains { gap: 0; }
+.part .domains li { padding: 10px 0; border-bottom: 1px solid var(--band-line); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 0.9375rem; }
+.part .domains li:first-child { padding-top: 0; }
+.part .domains li::before { content: none; }
+.domains li span:first-child { color: var(--band-fg); }
+.domains li span:last-child { font-family: var(--font-mono); font-size: 0.75rem; color: var(--band-muted); text-align: right; }
+
+/* ---------- experience ---------- */
+.job { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 8px 40px; padding-block: 38px; border-top: 1px solid var(--line); }
+.job:first-child { border-top: 0; padding-top: 0; }
+.job:last-child { padding-bottom: 0; }
+.job .when { font-family: var(--font-mono); font-size: 0.7813rem; color: var(--muted); padding-top: 7px; display: grid; gap: 5px; align-content: start; font-variant-numeric: tabular-nums; }
+.job .when .now { color: var(--signal); }
+.job-body { display: grid; gap: 16px; min-width: 0; }
+.job-title { display: grid; gap: 2px; }
+.job-title h3 { font-family: var(--font-display); font-size: 1.625rem; font-weight: 500; letter-spacing: -0.012em; line-height: 1.15; }
+.job-title p { color: var(--muted); font-size: 0.9688rem; }
+.bullets { display: grid; gap: 11px; max-width: 43rem; }
+.bullets li { position: relative; padding-left: 20px; font-size: 0.9688rem; line-height: 1.6; }
+.bullets li::before { content: ""; position: absolute; left: 0; top: 0.76em; width: 8px; height: 1px; background: var(--muted); }
+
+/* ---------- projects ---------- */
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 40px; display: grid; gap: 30px; }
+.feature-top { display: grid; gap: 12px; max-width: 45rem; }
+.feature h3 { font-family: var(--font-display); font-size: clamp(1.6rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -0.014em; line-height: 1.12; text-wrap: balance; }
+.feature-top p { color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 32px; padding-block: 28px; border-block: 1px solid var(--line); }
+.stats div { display: grid; gap: 4px; align-content: start; min-width: 0; }
+.stats dt { order: 2; font-size: 0.8438rem; color: var(--muted); line-height: 1.45; }
+.stats dd { order: 1; font-family: var(--font-display); font-size: 2.375rem; font-weight: 400; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.tags li + li::before { content: "/"; margin-right: 14px; color: var(--line); }
+
+.rows { margin-top: 20px; }
+.row { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr) 170px; gap: 10px 40px; padding-block: 32px; border-bottom: 1px solid var(--line); align-items: start; }
+.row:last-child { border-bottom: 0; }
+.row h3 { font-family: var(--font-display); font-size: 1.3125rem; font-weight: 500; letter-spacing: -0.008em; line-height: 1.2; }
+.row .role { font-family: var(--font-mono); font-size: 0.7188rem; color: var(--signal); margin-top: 7px; letter-spacing: 0.02em; }
+.row p.desc { font-size: 0.9688rem; line-height: 1.6; }
+.row .tags { flex-direction: column; gap: 4px; padding-top: 4px; }
+.row .tags li + li::before { content: none; }
+.more { margin-top: 28px; }
+
+/* ---------- skills + education ---------- */
+.skills div { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 6px 40px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.skills div:first-child { padding-top: 0; }
+.skills div:last-child { border-bottom: 0; padding-bottom: 0; }
+.skills dt { padding-top: 5px; }
+.skills dd { font-size: 1rem; }
+
+.edu { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 64px; }
+.edu-col { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.edu-col h3 { font-family: var(--font-display); font-size: 1.625rem; font-weight: 500; letter-spacing: -0.012em; line-height: 1.18; text-wrap: balance; }
+.edu-col p { font-size: 0.9688rem; }
+.edu-col p.sub { color: var(--muted); }
+.medal { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-mono); font-size: 0.7813rem; color: var(--signal); letter-spacing: 0.02em; }
+.medal::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--signal-fill); }
+.certs li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 13px; border-bottom: 1px solid var(--line); font-size: 0.9688rem; }
+.certs li:first-child { padding-top: 0; }
+.certs li span:last-child { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+
+/* ---------- contact ---------- */
+.contact { padding-block: 108px; }
+.contact-box { display: grid; gap: 28px; max-width: 46rem; }
+.contact h2 { font-family: var(--font-display); font-size: clamp(2.3rem, 5vw, 3.75rem); font-weight: 400; letter-spacing: -0.022em; line-height: 1.04; text-wrap: balance; }
+.contact h2 i { color: var(--band-signal); }
+.contact p { color: var(--band-muted); font-size: 1.0625rem; max-width: 35rem; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; padding-block: 22px; border-block: 1px solid var(--band-line); }
+.mail-addr { font-family: var(--font-mono); font-size: clamp(0.95rem, 2.6vw, 1.25rem); color: var(--band-fg); user-select: all; overflow-wrap: anywhere; min-width: 0; flex: 1 1 auto; }
+.band .btn { border-color: var(--band-fg); }
+.band .btn-solid { background: var(--band-fg); color: var(--band-bg); }
+.band .btn-solid:hover { background: var(--band-accent); border-color: var(--band-accent); }
+.band .btn-line { color: var(--band-fg); }
+.band .btn-line:hover { background: var(--band-fg); color: var(--band-bg); }
+.foot { background: var(--band-bg); color: var(--band-muted); border-top: 1px solid var(--band-line); padding-block: 22px; font-family: var(--font-mono); font-size: 0.7188rem; letter-spacing: 0.03em; }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; }
+.foot a { color: var(--band-muted); text-decoration: none; }
+.foot a:hover { color: var(--band-fg); }
+
+/* ---------- narrow ---------- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .hero { padding-block: 48px 76px; }
+  .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spec div { padding: 18px 18px 18px 0; }
+  .spec div + div { padding-left: 0; border-left: 0; }
+  .spec div:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--band-line); }
+  .spec div:nth-child(n+3) { border-top: 1px solid var(--band-line); }
+  .row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .row .tags { flex-direction: row; gap: 4px 14px; padding-top: 2px; }
+  .row .tags li + li::before { content: "/"; margin-right: 14px; color: var(--line); }
+  .edu { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .top nav li.opt { display: none; }
+}
+@media (max-width: 680px) {
+  .sec { padding-block: 64px; }
+  .sec-head { margin-bottom: 36px; }
+  .band { padding-block: 68px; }
+  .contact { padding-block: 72px; }
+  .hero { padding-block: 32px 60px; }
+  .parts { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .job { grid-template-columns: minmax(0, 1fr); padding-block: 30px; }
+  .job .when { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 0; }
+  .skills div { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+  .stats dd { font-size: 2rem; }
+  .feature { padding: 26px 20px; }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .batch { padding: 16px; }
+  .mark span { font-size: 1.0625rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise { animation: none; }
+  .btn, .top { transition: none; }
+}
+</style>
+</head>
+<body>
+<header class="top" id="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Muhammad Haziq Ijaz, back to top"><b aria-hidden="true">H</b><span>Haziq Ijaz</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li class="opt"><a href="#work">Current work</a></li>
+        <li class="opt"><a href="#experience">Experience</a></li>
+        <li class="opt"><a href="#projects">Projects</a></li>
+        <li class="opt"><a href="#skills">Skills</a></li>
+        <li><a class="cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label status rise">Machine Learning Engineer · Open to new work</p>
+        <h1 class="rise d1">I build AI systems, and the tests that keep them <em>honest</em>.</h1>
+        <p class="lede rise d2">I'm Muhammad Haziq Ijaz. At <strong>Anthology</strong> I design GPU inference benchmarks that measure how well AI coding agents can speed up LLM decoding. Before that I shipped call-intelligence pipelines, RAG assistants and data platforms for teams in legal, retail and maritime operations.</p>
+        <div class="actions rise d3">
+          <a class="btn btn-solid" href="#work">See current work</a>
+          <a class="textlink" href="#contact">Get in touch</a>
+        </div>
+        <dl class="facts rise d4">
+          <div><dt class="label">Now</dt><dd>ML Engineer at Anthology, remote contract</dd></div>
+          <div><dt class="label">Education</dt><dd>BS Data Science, FAST-NUCES. Bronze Medalist</dd></div>
+          <div><dt class="label">Focus</dt><dd>Inference optimization, evaluation, applied LLM systems</dd></div>
+        </dl>
+      </div>
+
+      <figure class="batch rise d2" aria-labelledby="batch-cap">
+        <div class="batch-head">
+          <span class="label">Batched decoding, illustrated</span>
+          <span class="step" id="batch-step">step 10 / 10</span>
+        </div>
+        <div class="grid" id="batch-grid" role="img" aria-label="A grid of eight token sequences decoded together. Shorter sequences are filled out with padding cells."></div>
+        <ul class="legend">
+          <li><i class="c-prompt"></i>prompt</li>
+          <li><i class="c-gen"></i>generated</li>
+          <li><i class="c-pad"></i>padding</li>
+        </ul>
+        <figcaption id="batch-cap">Eight sequences decoded as one batch, one cell per token. Short prompts and early finishers are filled out with padding: <b id="batch-share">30%</b> of this batch. Attention spent there is wasted work, and it is one of the things my benchmark asks an agent to find.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="work">
+    <div class="wrap">
+      <div class="band-head">
+        <p class="label">Current work · Anthology · Oct 2026 to present</p>
+        <h2>A benchmark for how well AI coding agents <i>optimize</i> LLM decoding</h2>
+        <p>I designed and built an accepted benchmark task. An agent gets batched decoding for a small LLM on a single GPU and is scored on how much faster it makes it, while the outputs stay within tolerance of an independent reference.</p>
+      </div>
+
+      <dl class="spec">
+        <div><dt class="label">Model</dt><dd>Qwen2.5-1.5B</dd></div>
+        <div><dt class="label">Hardware</dt><dd>NVIDIA H100</dd></div>
+        <div><dt class="label">Scoring</dt><dd>Geometric-mean speedup<small>across four workloads</small></dd></div>
+        <div><dt class="label">Memory cap</dt><dd>40 GiB<small>polled at the driver</small></dd></div>
+      </dl>
+
+      <div class="parts">
+        <div class="part">
+          <h3>What the agent has to find</h3>
+          <ul>
+            <li><b>Kernel-launch overhead</b>, addressed with CUDA graphs and torch.compile.</li>
+            <li><b>Attention wasted on padded sequences</b> in a mixed-length batch.</li>
+            <li><b>Long-context attention</b>: split-K (flash-decoding) written in Triton, with grouped-query attention.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <h3>How a result is verified</h3>
+          <ul>
+            <li><b>Teacher-forced inputs</b>, so every submission sees the same token stream.</li>
+            <li><b>Per-position checks of full logits</b> against an independent fp32 reference, with top-1 tolerance and KL-divergence bounds.</li>
+            <li><b>Held-out evaluation prompts</b> the submission never sees while it is being tuned.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <h3>How it resists reward hacking</h3>
+          <ul>
+            <li><b>Signed engine replies</b>, so results cannot be forged.</li>
+            <li><b>Source scanning</b> for process and socket escapes.</li>
+            <li><b>Driver-level GPU memory polling</b> against the 40 GiB cap.</li>
+            <li><b>Timing functions bound before the submission loads</b>, so the clock cannot be patched.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <h3>Six further tasks proposed</h3>
+          <ul class="domains">
+            <li><span>Video</span><span>RAFT optical flow</span></li>
+            <li><span>Speech</span><span>FullSubNet streaming</span></li>
+            <li><span>3D</span><span>TripoSR triplane rendering</span></li>
+            <li><span>Genomics</span><span>HyenaDNA</span></li>
+            <li><span>Proteins</span><span>ESM-2</span></li>
+            <li><span>Time series</span><span>TimesFM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Experience</p>
+        <h2>Four teams, from maritime data to <i>GPU kernels</i></h2>
+      </div>
+      <ol class="timeline">
+        <li class="job">
+          <div class="when"><span class="now">Oct 2026 – Present</span><span>Remote</span></div>
+          <div class="job-body">
+            <div class="job-title"><h3>Anthology</h3><p>Machine Learning Engineer, contract</p></div>
+            <ul class="bullets">
+              <li>Design and build benchmark tasks and verification harnesses for GPU inference optimization. The first accepted task is <a href="#work">described above</a>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>Oct 2025 – Jul 2026</span><span>Islamabad, Pakistan</span></div>
+          <div class="job-body">
+            <div class="job-title"><h3>Calcite Technologies</h3><p>AI Developer</p></div>
+            <ul class="bullets">
+              <li>Architected a microservices social media platform with 25+ REST endpoints on FastAPI, MongoDB and Redis, and integrated LangChain with GPT-4o-mini for AI content suggestions that users accepted more than 85% of the time.</li>
+              <li>Built a call-intelligence pipeline combining automated transcription, speaker diarization and deterministic rule-based scoring of compliance disclosures, greeting quality and professionalism. It standardized QA across every sales and support call the team handled.</li>
+              <li>Wrote a Triton GPU kernel that fuses residual addition and ReLU into a single launch, and compared its latency against PyTorch eager execution and a compiled PyTorch baseline.</li>
+              <li>Designed a pipeline that turns static knowledge bases (PDF, PPTX, DOCX, MP4) into AI-narrated video lectures. LLMs draft structured scripts, slides are assembled programmatically and synced to an AI avatar, and the output is ready to distribute.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>Jun 2025 – Sep 2025</span><span>Islamabad, Pakistan</span></div>
+          <div class="job-body">
+            <div class="job-title"><h3>Elyptra</h3><p>Automation Engineer</p></div>
+            <ul class="bullets">
+              <li>Built Extranjer-IA, an AI legal document automation platform for Spanish immigration cases. It covers AI-driven questionnaires, document generation, intake over web, Telegram and email, and Stripe billing. Case processing went from days to minutes.</li>
+              <li>Built a sourcing tool that pulls open roles from PyjamaHR, enriches each listing with LinkedIn data (profiles, emails, posts) and exports analysis-ready CSVs for recruiter outreach.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when"><span>Jul 2024 – Jun 2025</span><span>Islamabad, Pakistan</span></div>
+          <div class="job-body">
+            <div class="job-title"><h3>NESCOM</h3><p>AI &amp; Big Data Engineer</p></div>
+            <ul class="bullets">
+              <li>Developed an AI/ML maritime intelligence system that analyzed vessel deployment patterns and flagged operational anomalies in near real time across the monitored fleet.</li>
+              <li>Delivered analysis on fleet management, route optimization and fishing zones that informed deployment decisions for national maritime operations.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Projects</p>
+        <h2>Selected projects, with the <i>numbers</i> they moved</h2>
+      </div>
+
+      <article class="feature">
+        <div class="feature-top">
+          <p class="label">Featured</p>
+          <h3>AI Sales Analytics &amp; E-Commerce Platform</h3>
+          <p>A sales call analytics platform with speaker diarization, multi-factor GPT scoring and product extraction. Automated voicemail pre-screening keeps empty calls away from the LLM. I later extended it with voice and image search, so a shopper can find a product by speaking or by showing a photo.</p>
+        </div>
+        <dl class="stats">
+          <div><dt>French sales calls processed per day</dt><dd>350+</dd></div>
+          <div><dt>precision on product extraction</dt><dd>91%</dd></div>
+          <div><dt>less manual QA time</dt><dd>62%</dd></div>
+          <div><dt>lower LLM cost from voicemail pre-screening</dt><dd>45%</dd></div>
+          <div><dt>lower AI cost on multimodal search</dt><dd>75%</dd></div>
+          <div><dt>cached visual searches</dt><dd>&lt;100 ms</dd></div>
+        </dl>
+        <ul class="tags"><li>OpenAI</li><li>WhisperX</li><li>Pyannote</li><li>FastAPI</li><li>MongoDB</li><li>Redis</li></ul>
+      </article>
+
+      <div class="rows">
+        <article class="row">
+          <div><h3>Halal Foods Intelligence Ecosystem</h3><p class="role">Lead Data &amp; AI Engineer</p></div>
+          <p class="desc">A market intelligence engine that tracks Halal food sources globally. It brings thousands of suppliers from Uber Eats and local sources into one dashboard, confirms Halal compliance with AI call analysis, and cut manual supplier vetting time by 90%.</p>
+          <ul class="tags"><li>Node.js</li><li>Python</li><li>MongoDB</li><li>Selenium</li><li>AWS</li><li>Whisper</li></ul>
+        </article>
+        <article class="row">
+          <div><h3>TraderTherapist</h3><p class="role">AI Developer</p></div>
+          <p class="desc">A full-stack AI performance coach for financial traders. A RAG pipeline retrieves guidance from trading-psychology resources, session memory keeps context, and the assistant coaches traders through high-stress moments before emotion turns into a bad trade.</p>
+          <ul class="tags"><li>FastAPI</li><li>LangChain</li><li>OpenAI</li><li>ChromaDB</li><li>SQL</li></ul>
+        </article>
+        <article class="row">
+          <div><h3>Watermelon AI</h3><p class="role">Full Stack Developer</p></div>
+          <p class="desc">Enterprise automation for social media and resourcing. It schedules and posts content on its own and matches people to work with a resource-matching system, saving teams hours of admin each week.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>React</li><li>Microservices</li></ul>
+        </article>
+        <article class="row">
+          <div><h3>AI Multimodal Chatbot Platform</h3><p class="role">Full stack</p></div>
+          <p class="desc">An assistant that takes chat, voice and file input. It summarizes multimodal content, runs real-time object detection from a webcam and switches between personas on request.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>GPT-4</li><li>YOLOv8</li></ul>
+        </article>
+        <article class="row">
+          <div><h3>METRO Data Warehouse ETL</h3><p class="role">Data engineering</p></div>
+          <p class="desc">A near real-time data warehouse for the METRO shopping store, using the MESHJOIN algorithm to join the incoming transaction stream against master data.</p>
+          <ul class="tags"><li>SQL</li><li>JavaScript</li></ul>
+        </article>
+      </div>
+      <p class="more"><a class="textlink" href="https://github.com/MuhammadHaziq1337" target="_blank" rel="noopener">More on GitHub</a></p>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Skills</p>
+        <h2>What I work with</h2>
+      </div>
+      <dl class="skills">
+        <div><dt class="label">GPU &amp; inference</dt><dd>Triton kernels, CUDA graphs, torch.compile, flash-decoding attention, benchmark and verification harness design</dd></div>
+        <div><dt class="label">Languages</dt><dd>Python, C++, SQL, JavaScript</dd></div>
+        <div><dt class="label">ML &amp; LLM</dt><dd>PyTorch, TensorFlow, Keras, Scikit-learn, LangChain, Faiss, RAG pipelines</dd></div>
+        <div><dt class="label">Backend &amp; apps</dt><dd>FastAPI, Flask, Streamlit, React, MongoDB, Redis</dd></div>
+        <div><dt class="label">Data</dt><dd>Pandas, NumPy, Spark, Hadoop, Kafka, ETL, data warehousing, Tableau, D3.js, Matplotlib, Seaborn</dd></div>
+        <div><dt class="label">DevOps</dt><dd>Git, Docker, Jenkins, Kubernetes</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="education">
+    <div class="wrap">
+      <div class="edu">
+        <div class="edu-col">
+          <p class="label">Education</p>
+          <h3>FAST – National University of Computer and Emerging Sciences</h3>
+          <p>Bachelor of Science, Data Science · Islamabad · Aug 2021 – Jun 2025</p>
+          <span class="medal">Bronze Medalist</span>
+          <p class="sub">Coursework: AI, NLP, Multi-Agent Systems, MLOps, Advanced Statistics, Data Warehousing, Data Mining, Big Data Analytics, Deep Learning.</p>
+        </div>
+        <div class="edu-col">
+          <p class="label">Certifications</p>
+          <ul class="certs">
+            <li><span>Neural Networks with PyTorch, IBM</span><span>Jun 2024</span></li>
+            <li><span>Data Analytics, LinkedIn</span><span>Aug 2024</span></li>
+            <li><span>Data Analytics Foundation: 1, LinkedIn</span><span>Aug 2024</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <p class="label">Contact</p>
+        <h2>Have a model to speed up, or a system to <i>build</i>?</h2>
+        <p>I'm open to new roles and freelance projects in ML engineering, inference optimization and applied AI. Email is the fastest way to reach me.</p>
+        <div class="mail">
+          <a class="mail-addr" id="mail-addr" href="mailto:haziqijaz12345@gmail.com" style="text-decoration:none">haziqijaz12345@gmail.com</a>
+          <button class="btn btn-solid" id="copy-mail" type="button">Copy email</button>
+        </div>
+        <div class="actions">
+          <a class="btn btn-line" href="https://www.linkedin.com/in/haziqijaz1337/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-line" href="https://github.com/MuhammadHaziq1337" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Muhammad Haziq Ijaz</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Hero illustration: eight sequences decoded as one left-padded batch.
+  var PROMPT = [9, 14, 6, 12, 16, 8, 11, 5];   // prompt length per sequence
+  var GEN    = [10, 7, 10, 4, 9, 10, 6, 8];    // tokens generated before each sequence stops
+  var MAXP = 16, MAXG = 10;
+  var grid = document.getElementById('batch-grid');
+  var stepEl = document.getElementById('batch-step');
+  var shareEl = document.getElementById('batch-share');
+  if (!grid) return;
+
+  var genCells = [];
+  var padCount = 0;
+  for (var r = 0; r < PROMPT.length; r++) {
+    for (var c = 0; c < MAXP + MAXG; c++) {
+      var s = document.createElement('span');
+      if (c < MAXP - PROMPT[r]) { s.className = 'c-pad'; padCount++; }
+      else if (c < MAXP) { s.className = 'c-prompt'; }
+      else {
+        var k = c - MAXP;
+        if (k >= GEN[r]) padCount++;
+        genCells.push({ el: s, k: k, live: k < GEN[r] });
+      }
+      grid.appendChild(s);
+    }
+  }
+  if (shareEl) shareEl.textContent = Math.round(100 * padCount / (PROMPT.length * (MAXP + MAXG))) + '%';
+
+  function render(step, moving) {
+    for (var i = 0; i < genCells.length; i++) {
+      var g = genCells[i], cls;
+      if (g.k >= step) cls = 'c-todo';
+      else if (!g.live) cls = 'c-pad';
+      else cls = (moving && g.k === step - 1) ? 'c-now' : 'c-gen';
+      g.el.className = cls;
+    }
+    if (stepEl) stepEl.textContent = 'step ' + step + ' / ' + MAXG;
+  }
+  render(MAXG, false);
+
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) return;
+
+  var step = MAXG, timer = null;
+  function tick() {
+    if (document.hidden) return;
+    step++;
+    if (step > MAXG) {
+      clearInterval(timer);
+      render(MAXG, false);
+      setTimeout(run, 4200);
+      return;
+    }
+    render(step, true);
+  }
+  function run() {
+    step = 0;
+    render(0, true);
+    timer = setInterval(tick, 380);
+  }
+  setTimeout(run, 2600);
+})();
+
+(function () {
+  // Header: hairline once the page has scrolled, and mark the section in view.
+  var bar = document.getElementById('topbar');
+  if (bar) {
+    var onScroll = function () { bar.classList.toggle('scrolled', (window.scrollY || document.documentElement.scrollTop) > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  if (!('IntersectionObserver' in window)) return;
+  var links = {};
+  var anchors = document.querySelectorAll('.top nav a[href^="#"]');
+  for (var i = 0; i < anchors.length; i++) links[anchors[i].getAttribute('href').slice(1)] = anchors[i];
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      for (var id in links) links[id].removeAttribute('aria-current');
+      if (links[e.target.id]) links[e.target.id].setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  for (var id in links) { var el = document.getElementById(id); if (el) io.observe(el); }
+})();
+
+(function () {
+  var btn = document.getElementById('copy-mail');
+  var addr = document.getElementById('mail-addr');
+  if (!btn || !addr) return;
+  function selectAddr() {
+    var range = document.createRange();
+    range.selectNodeContents(addr);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  btn.addEventListener('click', function () {
+    var done = function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 1800);
+    };
+    var fallback = function () {
+      selectAddr();
+      btn.textContent = 'Selected, press copy';
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 2400);
+    };
+    try {
+      navigator.clipboard.writeText(addr.textContent.trim()).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
